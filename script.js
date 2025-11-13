@@ -65,7 +65,7 @@ function downloadCalendar() {
     const eventTitle = 'Majlis Merisik & Pertunangan - Muna & Zaid';
     const eventDate = '20251129'; // November 29, 2025
     const startTime = '140000'; // 2:00 PM
-    const endTime = '180000'; // 6:00 PM
+    const endTime = '160000'; // 4:00 PM
     const location = 'No 44, Jalan BS 13, Taman Bertam Setia, Melaka';
 
     const description = `Majlis Merisik & Pertunangan

@@ -122,7 +122,7 @@ body {
 .date-day,
 .date-year {
     font-weight: 400;
-    font-size: 0.85rem;
+    font-size: 1rem;
     text-transform: uppercase;
     color: #666;
     letter-spacing: 2px;
@@ -170,7 +170,7 @@ body {
 .landing-location {
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #666;
     margin-top: 1rem;
     line-height: 1.7;
@@ -585,9 +585,13 @@ body {
         font-size: 1.1rem;
     }
 
+    .date-day,
+    .date-year {
+        font-size: 1.1rem;
+    }
 
     .landing-location {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .host-name,
@@ -624,7 +628,7 @@ body {
     }
 
     .event-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-bottom: 3rem;
     }
 
@@ -659,7 +663,7 @@ body {
 
     .date-day,
     .date-year {
-        font-size: 0.95rem;
+        font-size: 1.3rem;
     }
 
     .date-main {
@@ -672,7 +676,7 @@ body {
     }
 
     .landing-location {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     .hosts-section,
