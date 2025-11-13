@@ -14,12 +14,49 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// Phone numbers stored in obfuscated format to avoid bot scraping
+// Numbers are reversed and base64 encoded
+const encodedNumbers = {
+    muna: 'NTI1ODM4OTQxMDYr'
+};
+
+// Decode phone number
+function decodePhone(encoded) {
+    try {
+        // Decode: base64 decode, then reverse
+        const decoded = atob(encoded);
+        return decoded.split('').reverse().join('');
+    } catch (e) {
+        return '';
+    }
+}
+
+// Initialize contact links with phone numbers
+function initContactLinks() {
+    const contactLinks = document.querySelectorAll('.contact-link[data-contact]');
+    contactLinks.forEach(link => {
+        const contactType = link.getAttribute('data-contact');
+        const encoded = encodedNumbers[contactType];
+        if (encoded) {
+            const phoneNumber = decodePhone(encoded);
+            link.href = `tel:${phoneNumber}`;
+            const numberSpan = link.querySelector('.contact-number');
+            if (numberSpan) {
+                numberSpan.textContent = phoneNumber;
+            }
+        }
+    });
+}
+
 // Observe all elements with fade-in class
 document.addEventListener('DOMContentLoaded', () => {
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(element => {
         observer.observe(element);
     });
+
+    // Initialize contact links
+    initContactLinks();
 });
 
 // Function to generate and download calendar file
